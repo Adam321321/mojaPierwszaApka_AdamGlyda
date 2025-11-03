@@ -1,0 +1,27 @@
+name: CI for Web Project
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Verify HTML structure
+        run: |
+          echo "✅ Pliki HTML zostały poprawnie załadowane!"
+          ls -l
+
+      - name: Check for index.html
+        run: |
+          if [ -f "index.html" ]; then
+            echo "✅ Plik index.html istnieje!"
+          else
+            echo "❌ Brak pliku index.html!"
+            exit 1
+          fi

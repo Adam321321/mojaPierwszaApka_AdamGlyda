@@ -27,3 +27,4 @@ function changecolor() {
 		alert(' ')
 	}
 }
+//tescik z kolega
